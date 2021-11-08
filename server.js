@@ -6,7 +6,8 @@ const app = express();
 const cors = require("cors");
 const routes = require("./src/routes")
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
+
 
 
 app.use(
@@ -36,4 +37,4 @@ app.use("/api/user", routes.USER);
 var server = app.listen(port, function () {
     var port = server.address().port;
     console.log("Express is working on port " + port);
-  });
+});
